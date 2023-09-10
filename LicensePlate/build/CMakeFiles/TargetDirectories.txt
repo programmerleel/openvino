@@ -1,0 +1,3 @@
+/home/ubuntu/code/openvino/LicensePlate/build/CMakeFiles/main.dir
+/home/ubuntu/code/openvino/LicensePlate/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/code/openvino/LicensePlate/build/CMakeFiles/rebuild_cache.dir
