@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/ubuntu/code/openvino/Yolo-v5/src/detector.cpp" "CMakeFiles/main.dir/src/detector.cpp.o" "gcc" "CMakeFiles/main.dir/src/detector.cpp.o.d"
   "/home/ubuntu/code/openvino/Yolo-v5/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   )
 

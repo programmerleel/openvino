@@ -1,0 +1,1 @@
+openvino-dev[kaldi]==2023.0.1  # dependabot-ignore

@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/detector.o: src/detector.cpp.o
+.PHONY : src/detector.o
+
+# target to build an object file
+src/detector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/detector.cpp.o
+.PHONY : src/detector.cpp.o
+
+src/detector.i: src/detector.cpp.i
+.PHONY : src/detector.i
+
+# target to preprocess a source file
+src/detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/detector.cpp.i
+.PHONY : src/detector.cpp.i
+
+src/detector.s: src/detector.cpp.s
+.PHONY : src/detector.s
+
+# target to generate assembly for a file
+src/detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/detector.cpp.s
+.PHONY : src/detector.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/detector.o"
+	@echo "... src/detector.i"
+	@echo "... src/detector.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
