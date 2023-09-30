@@ -31,6 +31,6 @@
 2. OpenVINO 2023.0.2
 3. 异步推理原理
 ![](resource/async.png)
-    在第一帧时进行推理前的图像处理，request完成第一帧推理后，next_infer开始第二帧的前处理
+    进行图片推理的同时完成对上一帧图片的读取
 ### 网络结构
 ![](resource/yolov5s.xml.png)
