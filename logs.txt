@@ -1,0 +1,94 @@
+2023-10-19 06:27:42,562 - root - convert.py[line:74] - ERROR - 'str' object has no attribute 'training'
+2023-10-19 06:27:42,563 - root - convert.py[line:75] - ERROR - Traceback (most recent call last):
+  File "/home/code/openvino/examples/convert.py", line 37, in export_onnx
+    torch.onnx.export(
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
+    return utils.export(model, args, f, export_params, verbose, training,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
+    _export(model, args, f, export_params, verbose, training, input_names, output_names,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 709, in _export
+    with select_model_mode_for_export(model, training):
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 42, in select_model_mode_for_export
+    is_originally_training = model.training
+AttributeError: 'str' object has no attribute 'training'
+
+2023-10-19 06:31:18,559 - root - convert.py[line:74] - ERROR - 'str' object has no attribute 'training'
+2023-10-19 06:31:18,559 - root - convert.py[line:75] - ERROR - Traceback (most recent call last):
+  File "/home/code/openvino/examples/convert.py", line 37, in export_onnx
+    torch.onnx.export(
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
+    return utils.export(model, args, f, export_params, verbose, training,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
+    _export(model, args, f, export_params, verbose, training, input_names, output_names,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 709, in _export
+    with select_model_mode_for_export(model, training):
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 42, in select_model_mode_for_export
+    is_originally_training = model.training
+AttributeError: 'str' object has no attribute 'training'
+
+2023-10-19 06:32:35,644 - root - convert.py[line:74] - ERROR - 'str' object has no attribute 'training'
+2023-10-19 06:32:35,645 - root - convert.py[line:75] - ERROR - Traceback (most recent call last):
+  File "/home/code/openvino/examples/convert.py", line 37, in export_onnx
+    torch.onnx.export(
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
+    return utils.export(model, args, f, export_params, verbose, training,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
+    _export(model, args, f, export_params, verbose, training, input_names, output_names,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 709, in _export
+    with select_model_mode_for_export(model, training):
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 119, in __enter__
+    return next(self.gen)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 42, in select_model_mode_for_export
+    is_originally_training = model.training
+AttributeError: 'str' object has no attribute 'training'
+
+2023-10-19 08:45:09,392 - root - convert.py[line:77] - ERROR - Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor
+2023-10-19 08:45:09,394 - root - convert.py[line:78] - ERROR - Traceback (most recent call last):
+  File "/home/code/ResNet18/convert.py", line 40, in export_onnx
+    torch.onnx.export(
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
+    return utils.export(model, args, f, export_params, verbose, training,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
+    _export(model, args, f, export_params, verbose, training, input_names, output_names,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 724, in _export
+    _model_to_graph(model, args, verbose, input_names,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 493, in _model_to_graph
+    graph, params, torch_out, module = _create_jit_graph(model, args)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 437, in _create_jit_graph
+    graph, torch_out = _trace_and_get_graph_from_model(model, args)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 388, in _trace_and_get_graph_from_model
+    torch.jit._get_trace_graph(model, args, strict=False, _force_outplace=False, _return_inputs_states=True)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/jit/_trace.py", line 1166, in _get_trace_graph
+    outs = ONNXTracedModule(f, strict, _force_outplace, return_inputs, _return_inputs_states)(*args, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/jit/_trace.py", line 127, in forward
+    graph, out = torch._C._create_graph_by_tracing(
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/jit/_trace.py", line 118, in wrapper
+    outs.append(self.inner(*trace_inputs))
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/home/code/ResNet18/net.py", line 90, in forward
+    x = self.conv_1(x)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
+    result = self.forward(*input, **kwargs)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 446, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor
+
