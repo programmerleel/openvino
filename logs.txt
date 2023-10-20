@@ -1,94 +1,113 @@
-2023-10-19 06:27:42,562 - root - convert.py[line:74] - ERROR - 'str' object has no attribute 'training'
-2023-10-19 06:27:42,563 - root - convert.py[line:75] - ERROR - Traceback (most recent call last):
-  File "/home/code/openvino/examples/convert.py", line 37, in export_onnx
-    torch.onnx.export(
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
-    return utils.export(model, args, f, export_params, verbose, training,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
-    _export(model, args, f, export_params, verbose, training, input_names, output_names,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 709, in _export
-    with select_model_mode_for_export(model, training):
-  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 119, in __enter__
-    return next(self.gen)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 42, in select_model_mode_for_export
-    is_originally_training = model.training
-AttributeError: 'str' object has no attribute 'training'
+2023-10-20 03:51:29,769 - root - convert.py[line:93] - ERROR - can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
+2023-10-20 03:51:29,770 - root - convert.py[line:94] - ERROR - Traceback (most recent call last):
+  File "/home/code/ResNet18/convert.py", line 87, in pytorch_export_onnx
+    output = output.numpy()
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.
 
-2023-10-19 06:31:18,559 - root - convert.py[line:74] - ERROR - 'str' object has no attribute 'training'
-2023-10-19 06:31:18,559 - root - convert.py[line:75] - ERROR - Traceback (most recent call last):
-  File "/home/code/openvino/examples/convert.py", line 37, in export_onnx
-    torch.onnx.export(
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
-    return utils.export(model, args, f, export_params, verbose, training,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
-    _export(model, args, f, export_params, verbose, training, input_names, output_names,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 709, in _export
-    with select_model_mode_for_export(model, training):
-  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 119, in __enter__
-    return next(self.gen)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 42, in select_model_mode_for_export
-    is_originally_training = model.training
-AttributeError: 'str' object has no attribute 'training'
+2023-10-20 06:06:24,181 - root - convert.py[line:94] - ERROR - 
+Arrays are not almost equal to 7 decimals
 
-2023-10-19 06:32:35,644 - root - convert.py[line:74] - ERROR - 'str' object has no attribute 'training'
-2023-10-19 06:32:35,645 - root - convert.py[line:75] - ERROR - Traceback (most recent call last):
-  File "/home/code/openvino/examples/convert.py", line 37, in export_onnx
-    torch.onnx.export(
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
-    return utils.export(model, args, f, export_params, verbose, training,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
-    _export(model, args, f, export_params, verbose, training, input_names, output_names,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 709, in _export
-    with select_model_mode_for_export(model, training):
-  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 119, in __enter__
-    return next(self.gen)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 42, in select_model_mode_for_export
-    is_originally_training = model.training
-AttributeError: 'str' object has no attribute 'training'
+Mismatched elements: 93 / 1960 (4.74%)
+Max absolute difference: 8.34465e-07
+Max relative difference: 6.954685e-06
+ x: array([[8.6577889e-03, 6.7519799e-02, 1.3729320e-02, ..., 3.9664680e-01,
+        1.9997083e-01, 2.2282071e-02],
+       [9.4248136e-14, 2.7372592e-04, 1.4151432e-12, ..., 9.9700445e-01,...
+ y: array([[8.6577842e-03, 6.7519814e-02, 1.3729320e-02, ..., 3.9664680e-01,
+        1.9997077e-01, 2.2282064e-02],
+       [9.4248509e-14, 2.7372621e-04, 1.4151515e-12, ..., 9.9700457e-01,...
+2023-10-20 06:06:24,182 - root - convert.py[line:95] - ERROR - Traceback (most recent call last):
+  File "/home/code/ResNet18/convert.py", line 91, in pytorch_export_onnx
+    print(np.testing.assert_almost_equal(output, onnx_output[0], decimal=7))
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 521, in assert_almost_equal
+    return assert_array_almost_equal(actual, desired, decimal, err_msg)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 1034, in assert_array_almost_equal
+    assert_array_compare(compare, x, y, err_msg=err_msg, verbose=verbose,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not almost equal to 7 decimals
 
-2023-10-19 08:45:09,392 - root - convert.py[line:77] - ERROR - Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor
-2023-10-19 08:45:09,394 - root - convert.py[line:78] - ERROR - Traceback (most recent call last):
-  File "/home/code/ResNet18/convert.py", line 40, in export_onnx
-    torch.onnx.export(
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/__init__.py", line 316, in export
-    return utils.export(model, args, f, export_params, verbose, training,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 107, in export
-    _export(model, args, f, export_params, verbose, training, input_names, output_names,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 724, in _export
-    _model_to_graph(model, args, verbose, input_names,
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 493, in _model_to_graph
-    graph, params, torch_out, module = _create_jit_graph(model, args)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 437, in _create_jit_graph
-    graph, torch_out = _trace_and_get_graph_from_model(model, args)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/onnx/utils.py", line 388, in _trace_and_get_graph_from_model
-    torch.jit._get_trace_graph(model, args, strict=False, _force_outplace=False, _return_inputs_states=True)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/jit/_trace.py", line 1166, in _get_trace_graph
-    outs = ONNXTracedModule(f, strict, _force_outplace, return_inputs, _return_inputs_states)(*args, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/jit/_trace.py", line 127, in forward
-    graph, out = torch._C._create_graph_by_tracing(
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/jit/_trace.py", line 118, in wrapper
-    outs.append(self.inner(*trace_inputs))
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
-    result = self.forward(*input, **kwargs)
-  File "/home/code/ResNet18/net.py", line 90, in forward
-    x = self.conv_1(x)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
-    result = self.forward(*input, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/container.py", line 141, in forward
-    input = module(input)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1090, in _slow_forward
-    result = self.forward(*input, **kwargs)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 446, in forward
-    return self._conv_forward(input, self.weight, self.bias)
-  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 442, in _conv_forward
-    return F.conv2d(input, weight, bias, self.stride,
-RuntimeError: Input type (torch.FloatTensor) and weight type (torch.cuda.FloatTensor) should be the same or input should be a MKLDNN tensor and weight is a dense tensor
+Mismatched elements: 93 / 1960 (4.74%)
+Max absolute difference: 8.34465e-07
+Max relative difference: 6.954685e-06
+ x: array([[8.6577889e-03, 6.7519799e-02, 1.3729320e-02, ..., 3.9664680e-01,
+        1.9997083e-01, 2.2282071e-02],
+       [9.4248136e-14, 2.7372592e-04, 1.4151432e-12, ..., 9.9700445e-01,...
+ y: array([[8.6577842e-03, 6.7519814e-02, 1.3729320e-02, ..., 3.9664680e-01,
+        1.9997077e-01, 2.2282064e-02],
+       [9.4248509e-14, 2.7372621e-04, 1.4151515e-12, ..., 9.9700457e-01,...
 
+2023-10-20 06:22:11,221 - root - convert.py[line:91] - ERROR - 
+Arrays are not almost equal to 4 decimals
+
+Mismatched elements: 17 / 1960 (0.867%)
+Max absolute difference: 0.0004347
+Max relative difference: 0.0050409
+ x: array([[8.3244e-03, 6.6479e-02, 1.2868e-02, ..., 4.0334e-01, 1.9982e-01,
+        2.1792e-02],
+       [8.1680e-14, 2.6088e-04, 1.1332e-12, ..., 9.9728e-01, 7.9610e-04,...
+ y: array([[8.3356e-03, 6.6490e-02, 1.2871e-02, ..., 4.0330e-01, 1.9979e-01,
+        2.1806e-02],
+       [8.2094e-14, 2.6117e-04, 1.1325e-12, ..., 9.9727e-01, 7.9787e-04,...
+2023-10-20 06:22:11,222 - root - convert.py[line:92] - ERROR - Traceback (most recent call last):
+  File "/home/code/ResNet18/convert.py", line 88, in pytorch_export_onnx
+    np.testing.assert_almost_equal(output, onnx_output[0], decimal=4)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 521, in assert_almost_equal
+    return assert_array_almost_equal(actual, desired, decimal, err_msg)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 1034, in assert_array_almost_equal
+    assert_array_compare(compare, x, y, err_msg=err_msg, verbose=verbose,
+  File "/home/anaconda3/envs/openvino/lib/python3.9/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/anaconda3/envs/openvino/lib/python3.9/site-packages/numpy/testing/_private/utils.py", line 797, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not almost equal to 4 decimals
+
+Mismatched elements: 17 / 1960 (0.867%)
+Max absolute difference: 0.0004347
+Max relative difference: 0.0050409
+ x: array([[8.3244e-03, 6.6479e-02, 1.2868e-02, ..., 4.0334e-01, 1.9982e-01,
+        2.1792e-02],
+       [8.1680e-14, 2.6088e-04, 1.1332e-12, ..., 9.9728e-01, 7.9610e-04,...
+ y: array([[8.3356e-03, 6.6490e-02, 1.2871e-02, ..., 4.0330e-01, 1.9979e-01,
+        2.1806e-02],
+       [8.2094e-14, 2.6117e-04, 1.1325e-12, ..., 9.9727e-01, 7.9787e-04,...
+
+2023-10-20 07:25:00,617 - root - convert.py[line:122] - ERROR - 'tuple' object cannot be interpreted as an integer
+2023-10-20 07:25:00,618 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7fa76580b1f0>
+2023-10-20 07:25:50,845 - root - convert.py[line:122] - ERROR - 'tuple' object cannot be interpreted as an integer
+2023-10-20 07:25:50,845 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7fc34d9271f0>
+2023-10-20 07:26:20,707 - root - convert.py[line:122] - ERROR - [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Unexpected input data type. Actual: (tensor(double)) , expected: (tensor(float))
+2023-10-20 07:26:20,707 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7fcb537b21f0>
+2023-10-20 07:27:22,722 - root - convert.py[line:122] - ERROR - randn() got an unexpected keyword argument 'dtype'
+2023-10-20 07:27:22,722 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7feb5e2c21f0>
+2023-10-20 07:27:45,902 - root - convert.py[line:122] - ERROR - randn() got an unexpected keyword argument 'dtype'
+2023-10-20 07:27:45,902 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7fa136f991f0>
+2023-10-20 07:29:39,490 - root - convert.py[line:122] - ERROR - randn() got an unexpected keyword argument 'type'
+2023-10-20 07:29:39,490 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7f844dee81f0>
+2023-10-20 07:30:29,744 - root - convert.py[line:122] - ERROR - 'tuple' object cannot be interpreted as an integer
+2023-10-20 07:30:29,745 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7f3f4e1311f0>
+2023-10-20 07:30:52,413 - root - convert.py[line:122] - ERROR - 
+Arrays are not almost equal to 4 decimals
+
+Mismatched elements: 26 / 1960 (1.33%)
+Max absolute difference: 0.00041336
+Max relative difference: 0.00520715
+ x: array([[8.6555e-03, 6.6735e-02, 1.3447e-02, ..., 4.0322e-01, 1.9659e-01,
+        2.2221e-02],
+       [9.2976e-14, 2.6920e-04, 1.2810e-12, ..., 9.9713e-01, 8.3500e-04,...
+ y: array([[8.6611e-03, 6.6759e-02, 1.3451e-02, ..., 4.0301e-01, 1.9659e-01,
+        2.2233e-02],
+       [9.3295e-14, 2.6965e-04, 1.2847e-12, ..., 9.9712e-01, 8.3613e-04,...
+2023-10-20 07:30:52,413 - root - convert.py[line:123] - ERROR - <function format_exc at 0x7f40cb3e11f0>
